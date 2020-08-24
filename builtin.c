@@ -1,6 +1,5 @@
 #include <stdint.h>
 #include <stdio.h>
 
-uint64_t write(uint64_t n) { return printf("%lld\n", n); }
-uint64_t writeln() { return printf("\n"); }
+uint64_t write(float f) { return printf("%lf\n", f); }
 

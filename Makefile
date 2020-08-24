@@ -17,8 +17,18 @@ clean:
 	[ -d __pycache__ ] && rm -rf __pycache__
 
 test: all
+	echo "* running main.py for 1+3*7"
 	echo "1+3*7" | python main.py
+	llvm-link build/out.ll build/builtin.ll -S -o build/linked.ll
+	echo "* running linked.ll by lli (inetrpreter)"
+	lli build/linked.ll
+	echo "* running another test for 3*(3+5)/4 <LF> 1+2*3"
 	echo "3*(3+5)/4\n1+2*3" | python main.py
+	llvm-link build/out.ll build/builtin.ll -S -o build/linked.ll
+	llc build/linked.ll -o build/linked.s
+	clang build/linked.s -o build/linked
+	echo "* running native linked"
+	build/linked
 
 # generation rules
 $(GRAMMAR_PY): grammar/SoLang.g4
