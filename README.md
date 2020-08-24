@@ -4,8 +4,8 @@
 
 * LLVM frontend (IR generation) Simple Calculator example with Antlr4 for Python3
 * Please refer to the following 2 for simpler versions
-** [LLVM1](https://github.com/sokoide/llvm1)
-** [LLVM2](https://github.com/sokoide/llvm2)
+  * [LLVM1](https://github.com/sokoide/llvm1)
+  * [LLVM2](https://github.com/sokoide/llvm2)
 
 
 ## How to build
